@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from './src/navigation/navigationTypes';
+import HomeScreen from './src/pages/HomeScreen';
+import BLEScreen from './src/pages/BLE-Screen';
+import LocScreen from './src/pages/Loc-Screen';
+import { enableScreens } from 'react-native-screens';
+import BleManager from 'react-native-ble-manager';
+
+enableScreens();
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#121212',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle:{
+            fontWeight: 'bold',
+          },
+        }}
+      >
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="BLE" component={BLEScreen} />
+        <Stack.Screen name="Loc" component={LocScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

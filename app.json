@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "myApp",
-    "slug": "myApp",
+    "name": "My Test Application",
+    "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,13 +15,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.example.myapp",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "This app uses Bluetooth for <insert explination here>.",
+        "NSBluetoothPeripheralUsageDescription": "This app uses Bluetooth for <insert explination here>.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app uses location services for <insert explination here>."
+      }
     },
     "android": {
+      "package": "com.example.myapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": ["BLUETOOTH_CONNECT"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
