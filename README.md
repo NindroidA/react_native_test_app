@@ -21,7 +21,10 @@ Before running the app, make sure you have the following installed:
 ### Android
 
 - Start an Android emulator or connect an Android device.
-- Run the app (expo): ```npm run android```
+- Run the app (expo): 
+    ```
+    npm run android
+    ```
 - Run the app (react-native): ```npx react-native run-android```
 
 ### iOS
