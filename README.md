@@ -29,7 +29,7 @@ Before running the app, make sure you have the following installed:
 #### Simulator
 - Start an ios Simulator.
 - Run the app (expo): ```npm run ios```
-- Run the app: ```npx react-native run-ios```
+- Run the app (react-native): ```npx react-native run-ios```
 
 #### Xcode
 - Open the project in Xcode: ```cd ios && open MyReactNativeApp.xcworkspace```
